@@ -54,18 +54,42 @@ export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr
 MYSQL_HOME=/usr/local/mysql/bin
 
 # Android
-ANDROID_HOME=/Users/Tu/Documents/Android/ADT/sdk
-ANDROID_NDK=/Users/Tu/Documents/Android/ADT/ndk
+ANDROID_HOME=$HOME/Documents/Android/ADT/sdk
+ANDROID_NDK=$HOME/Documents/Android/ADT/ndk
 
 # Android
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/20.0.0:$ANDROID_NDK:$MYSQL_HOME
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/build-tools/19.1.0:$ANDROID_HOME/platform-tools:$ANDROID_NDK:$MYSQL_HOME
 # Finished Android
 
 # Sublime
-alias sublime='open -a "Sublime Text 2"'
+alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+export EDITOR="subl"
+
+# Mou
 alias mou='open -a "Mou"'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-#autojump
+# Autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+# Java
+alias java_home="/usr/libexec/java_home"
+export JAVA_6_HOME=$(/usr/libexec/java_home -v 1.6)
+export JAVA_7_HOME=$(/usr/libexec/java_home -v 1.7)
+export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
+alias jdk6="export JAVA_HOME=$JAVA_6_HOME"
+alias jdk7="export JAVA_HOME=$JAVA_7_HOME"
+alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
+
+# Python
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages/
+
+# Tingyun
+# export ANT_OPTS="-javaagent:$HOME/Documents/Android/ADT/sdk/tools/lib/nbs.newlens.class.rewriter.jar"
+
+# alias
+alias pagp='ps aux | grep puma'
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
